@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--  INCLUDE THE HEAD EJS PARTIAL-->
+<head>
+    <%- include('../partials/homeHead'); %>
+</head>
+
+<body>
+
+    <!--  INCLUDE THE NAVBAR EJS PARTIAL-->
+    <%- include('../partials/nav'); %>
+
+    <!-- MAIN DIV CONTAINER FOR PAGE CONTENT-->
+    <div class="main-container col-span-6 px-5 mb-6 sm:px-6">
+
+        <!--                BUTTON TO RETURN TO HOME PAGE-->
+        <div class="flex flex-row content-start py-8 px-1" >
+            <a href="#" onclick="window.location.href='/'" class="flex flex-row content-start py-2 px-4 border
+                        border-transparent shadow-sm text-lg text-center font-medium rounded-md text-white bg-indigo-500
+                        hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Back to home
+            </a>
+        </div>
+
+
+    <!--    USED ONLINE MARKDOWN TO HTML CONVERTER TO GENERATE THE BELOW-->
+
+    <h1 id="csc8425-assessment-client-side-"><strong>CSC8425 - Assessment (Client Side)</strong></h1>
+    <h1 id="song-ideas-and-circle-sounds"><strong>Song Ideas and Circle Sounds</strong></h1><br>
+    <h2 id="by-jack-healy">By Jack Healy</h2><br>
+    <p><strong>Built using</strong></p>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Node</li>
+        <li>Express</li>
+        <li>SQLite</li>
+     </ul><br>
+        <p><strong>Objectives</strong><br>
+            To build a front end web application to upload and manage new song ideas with an attractive and responsive UI.</p>
+        <p>To build a music player that can play song ideas or finished songs</p>
+        <p>To build an interactive page that plays sounds and animations, as a source of inspiration for song ideas</p>
+        <p>To add interactivity where possible, with cursor highlighting, form validation and an animated Sign In button.</p><br>
+
+      <p><strong>Packages and tools</strong><br>
+        Outside of the standard dependencies I used -<br>
+        <a href="https://howlerjs.com" class="text-indigo-700" target="_blank">Howler.js</a> - JavaScript audio api/library<br>
+        <a href="http://paperjs.org" class="text-indigo-700" target="_blank">Paper.js</a> - Open source vector graphics scripting framework<br>
+        <a href="https://tailwindcss.com" class="text-indigo-700" target="_blank">Tailwind CSS</a> - Utility first CSS framework<br>
+        <a href="https://ejs.co" class="text-indigo-700" target="_blank">EJS</a> - Embedded JavaScript templating<br>
+        <a href="https://sqlitestudio.pl" class="text-indigo-700" target="_blank">SQLite studio</a> - Desktop app for browsing and editing SQLite database files</p><br>
+
+            <p><strong>Steps</strong></p><pre><code>
+        <span class="hljs-number">1</span>. Git clone repo or download and save project file
+        <span class="hljs-number">1</span>. Navigate to project folder /webproject
+        <span class="hljs-number">2</span>. Run npm install
+        <span class="hljs-number">3</span>. Navigate to /webproject/js
+        <span class="hljs-number">3</span>. Run node app.js
+        </code></pre><br>
+
+        <p><strong>Notes</strong></p>
+        <p>I used embedded JavaScript templating (EJS) to separate out components such as the music player and nav bar into partials that could then be included in the main pages.</p><br>
+        <p>I used SQLite studio to create a persistent database and save it in my project folder. This saves my song ideas in a .db file in the project folder.</p><br>
+        <p>I used Tailwind CSS to do most of my styling, I am familiar with its utility first approach and it made styling across multiple components easy.</p><br>
+        <p>Howler.js and Paper.js formed the basis of the &#39;Circle Sounds&#39; page, enabling me to create interactive animations</p><br>
+
+    </div>
+
+<!--  INCLUDE THE FOOTER EJS PARTIAL-->
+    <%- include('../partials/footer'); %>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- INCLUDE THE CIRCLES HEADER EJS PARTIAL-->
+  <head>
+    <%- include('../partials/circlesHead'); %>
+  </head>
+
+  <body>
+
+  <!--INCLUDE THE NAV BAR PARTIAL-->
+  <%- include('../partials/nav'); %>
+
+  <!-- BANNER MESSAGE -->
+    <div class="flex px-4 py-3 justify-center    sm:px-6">
+      <div  class="inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-md
+      font-medium rounded-md text-white bg-gray-800" >
+        <h4>Press any key, A to Z, and turn up speakers</h4>
+      </div>
+    </div>
+
+
+<!--  CANVAS LINKS TO ANIMATION CSS -->
+  <canvas id="myCanvas" resize></canvas>
+
+  </body>
+</html>

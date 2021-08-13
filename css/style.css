@@ -1,0 +1,62 @@
+
+ /*gradient background*/
+body{
+  background-image: linear-gradient(
+    0deg,
+    rgba(247, 247, 247, 1) 23.8%,
+    rgb(127, 174, 202) 92%
+  ) ;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 2em 2em;
+  /*border: 1px solid #ccc;*/
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 5px 0 rgba(50, 66, 87, 0.6);
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+ /*form input box colours*/
+.form-field.error input {
+  border-color: red;
+}
+
+.form-field.error textarea {
+  border-color: red;
+}
+
+.form-field.success input {
+  border-color: limegreen;
+}
+
+.form-field.success textarea {
+  border-color: limegreen;
+}
+
+
+/* !*Style the tab*!*/
+/*.tab {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  border: 1px solid #ccc;*/
+/*  border-top: none;*/
+/*  animation: fadeEffect 1s; !* Fading effect takes 1 second *!*/
+/*  padding: 20px 30px;*/
+/*  background-color: #ffffff;*/
+/*  border-radius: 15px;*/
+/*  box-shadow: 0 5px 5px 0 rgba(50, 66, 87, 0.6);*/
+/*  margin-top: 2em;*/
+/*}*/
+
+

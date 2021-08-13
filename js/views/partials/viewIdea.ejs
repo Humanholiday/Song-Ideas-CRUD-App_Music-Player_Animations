@@ -1,0 +1,83 @@
+
+
+<!--  USES EJS TO SHOW INDIVIDUAL IDEA DATA -->
+<!--      JAVASCRIPT EJS GETS THE INFORMATION FROM THE DATABASE MODEL THAT IS RETURNED WHEN THE HOME PAGE IS LOADED  E.G. <%= idea.title %> -->
+
+<!--   LINK TO IDEA-->
+<div id="view<%= idea.id %>" class="tabcontent col-span-6 px-7 py-7  sm:px-6">
+        <fieldset>
+            <div class="md:grid md:grid-cols-3 md:gap-6">
+
+                <!--TITLE-->
+                <div class="col-span-3 sm:col-span-3">
+                    <label for="title" class="block text-sm font-medium text-gray-700">
+                        Title - <%= idea.title %>
+                    </label>
+                </div>
+
+                <!--NAME-->
+                <div class="col-span-3 sm:col-span-3">
+                    <label for="name" class="block text-sm font-medium text-gray-700">
+                        Name - <%= idea.name %>
+                    </label>
+                </div>
+
+                <!--EMAIL-->
+                <div class="col-span-3 sm:col-span-3">
+                    <label for="email" class=" mt-1 block text-sm font-medium text-gray-700">
+                        Email address - <%= idea.email%>
+                    </label>
+                </div>
+
+                <!--    NOTES-->
+                <div class="col-span-3 sm:col-span-3">
+                    <label for="notes" class="block text-sm font-medium text-gray-700">
+                        Idea notes -
+                    </label>
+                    <label for="notes" class="block text-sm font-medium text-gray-700">
+                        <%= idea.notes %>
+                    </label>
+                </div>
+
+                <!--URL REFERENCES-->
+                <div class="col-span-3 sm:col-span-3">
+                    <label for="url" class="block text-sm font-medium text-gray-700">
+                        URL link to references - <%= idea.url %>
+                    </label>
+                </div>
+
+                <!--     GENRE-->
+                <div class="col-span-3 sm:col-span-3">
+                    <label for="url" class="block text-sm font-medium text-gray-700">
+                        Genre-
+                        <%= idea.genre_rock ? " Rock " : "" %>
+                        <%= idea.genre_indie ? " Indie " : "" %>
+                        <%= idea.genre_jazz ? " Jazz " : "" %>
+                        <%= idea.genre_other ? " Other " : "" %>
+                    </label>
+                </div>
+
+                <!--        SONG KEY-->
+                <div class="col-span-3 sm:col-span-3">
+                    <label for="url" class="block text-sm font-medium text-gray-700">
+                        Song Key-
+                        <%= idea.song_key == 'C' ? 'C' : '' %>
+                        <%- idea.song_key == 'D' ? 'D' : '' %>
+                        <%- idea.song_key == 'G' ? 'G' : '' %>
+
+                    </label>
+                </div>
+
+<!--                BUTTON TO RETURN TO HOME PAGE-->
+                <div class="form-field col-span-3 px-4 py-3  text-center sm:px-6">
+                    <a href="#" onclick="window.location.href='/'" class="inline-flex justify-center py-2 px-4 border
+                    border-transparent shadow-sm text-lg text-center font-medium rounded-md text-white bg-indigo-600
+                    hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Back
+                    </a>
+                    <small class="inline-flex justify-center mt-1 py-2 px-3 sm:text-sm rounded-md"></small>
+                </div>
+
+            </div>
+        </fieldset>
+</div>

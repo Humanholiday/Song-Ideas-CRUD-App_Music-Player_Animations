@@ -1,0 +1,146 @@
+
+<!-- NEW IDEA FORM - POSTS TO /ADD-->
+<form class="form" id="idea" action="/add" method="POST">
+<fieldset>
+    <div class="md:grid md:grid-cols-3 md:gap-6">
+
+
+        <!--TITLE-->
+        <div class="form-field col-span-3 sm:col-span-3">
+            <label for="title" class=" mt-1 block text-sm font-medium text-gray-700">Title*</label>
+                <input type="text" name="title" id="title" class="title mt-1 py-2 px-3  focus:ring-indigo-500
+        focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" placeholder="Song idea title" >
+            <small></small>
+        </div>
+
+
+        <!--NAME-->
+        <div class="form-field col-span-3 sm:col-span-3">
+            <label for="name" class=" mt-1 block text-sm font-medium text-gray-700">Name*</label>
+                <input type="text" name="name" id="name" class="name mt-1 py-2 px-3  focus:ring-indigo-500
+        focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md"   placeholder="Johnny Moonbeam" >
+            <small></small>
+        </div>
+
+        <!--EMAIL-->
+        <div class="form-field col-span-3 sm:col-span-3">
+            <label for="email" class=" mt-1 block text-sm font-medium text-gray-700">Email address*</label>
+            <input type="text" name="email" id="email" autocomplete="email" class="email mt-1 py-2 px-3  focus:ring-indigo-500
+        focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" placeholder="jmoonbeam@gmail.com" >
+            <small></small>
+        </div>
+
+        <!--    NOTES-->
+        <div class="form-field col-span-3 sm:col-span-3">
+            <label for="notes" class=" mt-1 block text-sm font-medium text-gray-700">Idea notes*</label>
+          <textarea id="notes" name="notes" rows="6" class="notes mt-1 py-2 px-3  focus:ring-indigo-500
+        focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md"
+                    placeholder="How does it sound/ influences etc." ></textarea>
+            <small></small>
+        </div>
+
+        <!--URL REFERENCES-->
+        <div class="form-field col-span-3 sm:col-span-3">
+            <label for="url" class=" mt-1 block text-sm font-medium text-gray-700">URL link to references*</label>
+                <input type="url" name="url" id="url" placeholder="https://example.com"  size="30"
+                       class="url mt-1 py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm
+                 border border-gray-300 rounded-md" >
+            <small></small>
+            <p class="text-sm text-gray-500 mt-6">*required</p>
+        </div>
+
+        <!--     GENRE-->
+        <div class="form-field col-span-3 px-4 py-1 bg-white space-y-6 sm:p-6">
+            <fieldset>
+                <legend class="text-base font-medium text-gray-900">Genre</legend>
+                    <p class="text-xs text-gray-500">Optional</p>
+                <div class="mt-4 space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="genre_rock" name="genre_rock" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                text-indigo-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="genre_rock" class="font-medium text-gray-700">Rock</label>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="genre_indie" name="genre_indie" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                text-indigo-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="genre_indie" class="font-medium text-gray-700">Indie</label>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="genre_jazz" name="genre_jazz" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                text-indigo-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="genre_jazz" class="font-medium text-gray-700">Jazz</label>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="genre_other" name="genre_other" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                text-indigo-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="genre_other" class="font-medium text-gray-700">Other</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <!--        SONG KEY-->
+        <div class="form-field col-span-3 px-4 py-1 bg-white space-y-6 sm:p-6">
+            <fieldset >
+                <div>
+                    <legend class="text-base font-medium text-gray-900">Song key</legend>
+                    <p class="text-xs text-gray-500">Optional</p>
+                </div>
+                <div class="mt-4 space-y-4">
+                    <div class="flex items-center">
+                        <input type="radio" id="c" name="song_key" value="C"  class="focus:ring-indigo-500 h-2 w-4 text-indigo-600 border-gray-300">
+                        <label for="c" class="ml-3 block text-sm font-medium text-gray-700">
+                            C
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="d" name="song_key"  value="D"  class="focus:ring-indigo-500 h-2 w-4 text-indigo-600 border-gray-300">
+                        <label for="d" class="ml-3 block text-sm font-medium text-gray-700">
+                            D
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="g" name="song_key" value="G"  class="focus:ring-indigo-500 h-2 w-4 text-indigo-600 border-gray-300">
+                        <label for="g" class="ml-3 block text-sm font-medium text-gray-700">
+                            G
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <small></small>
+
+<!--            SAVE AND CANCEL BUTTONS-->
+        </div>
+        <div class="form-field col-span-3 px-4 py-3  text-center sm:px-6">
+            <button type="submit" id="submit" class="formSubmit inline-flex justify-center py-2 px-6 mr-6 border border-transparent shadow-sm text-lg
+        font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Save
+            </button>
+            <a href="#" onclick="window.location.href='/'" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg text-center
+            font-medium rounded-md text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Cancel
+            </a>
+            <small class="inline-flex justify-center mt-1 py-2 px-3 sm:text-sm rounded-md"></small>
+        </div>
+
+
+
+    </div>
+</fieldset>
+</form>

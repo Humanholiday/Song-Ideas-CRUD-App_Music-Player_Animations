@@ -1,0 +1,36 @@
+<!--**** music player *****-->
+
+<!--MAIN CONTAINER-->
+<div class="main-music-container flex justify-center col-span-6 px-2 py-1  sm:px-6">
+    <div class="music-container" id="music-container">
+
+<!--        MUSIC PROGRESS AND SONG INFO - HIDDEN WHEN PLAYER INACTIVE-->
+        <div class="music-info">
+            <h4 id="music-title"></h4>
+            <div class="music-progress-container" id="music-progress-container">
+                <div class="music-progress" id="music-progress"></div>
+            </div>
+        </div>
+
+<!--        SONG ARTWORK AND RECORD ANIMATION-->
+        <audio src="music/Living Spirit.mp3" id="music-audio"></audio>
+        <div class="music-img-container">
+            <img src="img/Living Spirit.jpg" alt="music-cover" id="music-cover" />
+        </div>
+
+<!--        PLAY, FORWARD AND BACK BUTTONS-->
+        <div class="music-navigation">
+            <button id="music-prev" class="music-action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="music-play" class="music-action-btn music-action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="music-next" class="music-action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+

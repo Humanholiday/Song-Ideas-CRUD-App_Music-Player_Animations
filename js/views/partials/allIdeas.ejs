@@ -1,0 +1,57 @@
+
+<!--   ROW FOR SONG IDEA-->
+    <tr>
+
+<!--        AUTHOR NAME AND EMAIL-->
+        <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+                <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900">
+                        <%= idea.name %>
+                    </div>
+                    <div class="text-sm text-gray-500  ">
+                        <%= idea.email %>
+                    </div>
+                </div>
+            </div>
+        </td>
+
+<!--        IDEA TITLE AND TRUNCATED NOTES-->
+        <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-900"> <%= idea.title %></div>
+            <div class="text-sm text-gray-500 truncate max-w-md"><%= idea.notes %></div>
+        </td>
+
+<!--        SONG KEY-->
+        <td class="px-6 py-4 whitespace-nowrap">
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 ">
+            <%= idea.song_key %>
+            </span>
+        </td>
+
+<!--        IDEA GENRE-->
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 ">
+            <%= idea.genre_rock ? " Rock " : "" %>
+            <%= idea.genre_indie ? " Indie " : "" %>
+            <%= idea.genre_jazz ? " Jazz " : "" %>
+            <%= idea.genre_other ? " Other " : "" %>
+        </td>
+
+<!--        LINKS TO VIEW, EDIT AND DELETE-->
+
+        <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+            <a href="#" class="text-indigo-600 hover:text-gray-500" onclick="openForm('view<%= idea.id %>')">View</a>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+            <a href="#" class="text-indigo-600 hover:text-gray-500" onclick="openForm('update<%= idea.id %>')">Edit</a>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+            <a href="#" class="text-indigo-600 hover:text-gray-500" onclick="openForm('delete<%= idea.id %>')">Delete</a>
+        </td>
+
+    </tr>
+
+
+
+
+

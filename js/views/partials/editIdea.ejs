@@ -1,0 +1,154 @@
+
+<!-- UPDATE FORM - SENDS POST REQUEST TO /UPDATE ROUTE-->
+
+<!--  USES EJS TO INSERT EXISTING IDEA VALUES INTO THE INPUT FIELDS WHICH CAN REMAIN IN PLACE OR BE UPDATED BY THE USER-->
+<!--      JAVASCRIPT EJS GETS THE INFORMATION FROM THE DATABASE MODEL THAT IS RETURNED WHEN THE HOME PAGE IS LOADED  E.G. <%= idea.title %> -->
+
+<div id="update<%= idea.id %>" class="tabcontent col-span-6 px-4 py-3   sm:px-6">
+<form class="form" id="idea"  action="/update" method="POST" >
+    <fieldset>
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+
+<!--            HIDDEN IDEA DB ID-->
+            <input type="hidden" type="hidden" name="id" value="<%= idea.id %>"/>
+
+            <!--TITLE-->
+            <div class="form-field col-span-3 sm:col-span-3">
+                <label for="title" class=" mt-1 block text-sm font-medium text-gray-700">Title</label>
+                <input type="text" name="title" id="title" class="title mt-1 py-2 px-3  focus:ring-indigo-500
+        focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" value="<%= idea.title %>">
+                <small></small>
+            </div>
+
+            <!--NAME-->
+            <div class="form-field col-span-3 sm:col-span-3">
+                <label for="name" class=" mt-1 block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" name="name" id="name" class="name mt-1 py-2 px-3  focus:ring-indigo-500
+        focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" value="<%= idea.name %>">
+                <small></small>
+            </div>
+
+            <!--EMAIL-->
+            <div class="form-field col-span-3 sm:col-span-3">
+                <label for="email" class=" mt-1 block text-sm font-medium text-gray-700">Email address</label>
+                <input type="text" name="email" id="email" autocomplete="email" class="email mt-1 py-2 px-3  focus:ring-indigo-500
+        focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" value="<%= idea.email%>">
+                <small></small>
+            </div>
+
+            <!--    NOTES-->
+            <div class="form-field col-span-3 sm:col-span-3">
+                <label for="notes" class=" mt-1 block text-sm font-medium text-gray-700">Idea notes</label>
+                <textarea id="notes" name="notes" rows="6" class="notes shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 py-2 px-3
+          block w-full sm:text-sm border border-gray-300 rounded-md"> <%= idea.notes %> </textarea>
+                <small></small>
+            </div>
+
+            <!--URL REFERENCES-->
+            <div class="form-field col-span-3 sm:col-span-3">
+                <label for="url" class=" mt-1 block text-sm font-medium text-gray-700">URL link to references</label>
+                <input type="url" name="url" id="url" value="<%= idea.url %>" pattern="https://.*" size="30"
+                       class="url mt-1 py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm
+                 border border-gray-300 rounded-md" >
+                <small></small>
+            </div>
+
+            <!--     GENRE-->
+            <div class="form-field  col-span-3 px-4 py-5 bg-white space-y-6 sm:p-6">
+                <fieldset>
+                    <legend class="text-base font-medium text-gray-900">Genre</legend>
+                    <div class="mt-4 space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="genre_rock" name="genre_rock" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                    text-indigo-600 border-gray-300 rounded" <%= idea.genre_rock ? "checked" : "" %>>
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="genre_rock" class="font-medium text-gray-700">Rock</label>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="genre_indie" name="genre_indie" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                    text-indigo-600 border-gray-300 rounded" <%= idea.genre_indie ? "checked" : "" %>>
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="genre_indie" class="font-medium text-gray-700">Indie</label>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="genre_jazz" name="genre_jazz" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                    text-indigo-600 border-gray-300 rounded" <%= idea.genre_jazz ? "checked" : "" %>>
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="genre_jazz" class="font-medium text-gray-700">Jazz</label>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="genre_other" name="genre_other" type="checkbox" class="focus:ring-indigo-500 h-4 w-4
+                    text-indigo-600 border-gray-300 rounded" <%= idea.genre_other ? "checked" : "" %>>
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="genre_other" class="font-medium text-gray-700">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <small></small>
+            </div>
+
+
+            <!--        SONG KEY-->
+            <div class="form-field  col-span-3 px-4 py-5 bg-white space-y-6 sm:p-6">
+                <fieldset>
+                    <div>
+                        <legend class="text-base font-medium text-gray-900">Song key</legend>
+                        <p class="text-sm text-gray-500">What key is the song in?</p>
+                    </div>
+                    <div class="mt-4 space-y-4">
+                        <div class="flex items-center">
+                            <input id="c" name="song_key" type="radio" value="C"  class="focus:ring-indigo-500 h-2 w-4 text-indigo-600 border-gray-300"
+                                    <%-  idea.song_key == 'C' ? 'checked' : '' %>>
+                            <label for="c" class="ml-3 block text-sm font-medium text-gray-700">
+                                C
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="d" name="song_key" type="radio" value="D"  class="focus:ring-indigo-500 h-2 w-4 text-indigo-600 border-gray-300"
+                                    <%- idea.song_key == 'D' ? 'checked' : '' %>>
+                            <label for="d" class="ml-3 block text-sm font-medium text-gray-700">
+                                D
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="g" name="song_key" type="radio" value="G"  class="focus:ring-indigo-500 h-2 w-4 text-indigo-600 border-gray-300"
+                                    <%- idea.song_key == 'G' ? 'checked' : '' %>>
+                            <label for="g" class="ml-3 block text-sm font-medium text-gray-700">
+                                G
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <small></small>
+            </div>
+
+
+<!--            SEND UPDATE AND CANCEL FORM BUTTONS-->
+            <div class="form-field col-span-3 px-4 py-3  text-center sm:px-6">
+                <button type="submit" id="submit" class="formSubmit inline-flex justify-center py-2 px-4 mr-6 border border-transparent shadow-sm text-lg
+        font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Update
+                </button>
+                <a href="#" onclick="window.location.href='/'" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg text-center
+            font-medium rounded-md text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Cancel
+                </a>
+                <small class="inline-flex justify-center mt-1 py-2 px-3 sm:text-sm rounded-md"></small>
+            </div>
+
+        </div>
+    </fieldset>
+</form>
+</div>

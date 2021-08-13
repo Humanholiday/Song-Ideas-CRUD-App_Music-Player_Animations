@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--  INCLUDE THE HEAD EJS PARTIAL-->
+<head>
+  <%- include('../partials/homeHead'); %>
+</head>
+
+
+<body>
+
+  <!--  INCLUDE THE NAVBAR EJS PARTIAL-->
+  <%- include('../partials/nav'); %>
+
+
+  <!-- MAIN DIV CONTAINER FOR PAGE CONTENT-->
+  <div class="main-container col-span-6 px-4 py-3   sm:px-6">
+
+
+    <!-- HIDDEN FORM TO ADD A NEW SONG IDEA -->
+    <div id="add" class="tabcontent">
+        <%- include('../partials/addIdea'); %>
+    </div>
+
+  <!--     HIDDEN FORM TO EDIT AN IDEA-->
+    <div id="editcontainer" class="col-span-6 px-4 py-3   sm:px-6">
+
+  <!--    FOR EACH ROW/IDEA WITHIN THE MODEL, INCLUDE THE PARTIAL AND CREATE A SEPARATE FORM-->
+      <% for (const row of model) { %>
+        <%- include('../partials/editIdea', {idea: row} ); %>
+      <% } %>
+    </div>
+
+      <!--     HIDDEN WINDOW TO VIEW AN IDEA-->
+    <div id="viewcontainer" class="col-span-6 px-4 py-3   sm:px-6">
+
+      <!--    FOR EACH ROW/IDEA WITHIN THE MODEL, INCLUDE THE PARTIAL AND CREATE A SEPARATE WINDOW-->
+      <% for (const row of model) { %>
+        <%- include('../partials/viewIdea', {idea: row} ); %>
+      <% } %>
+    </div>
+
+      <!--     HIDDEN FORM TO DELETE AN IDEA-->
+    <div id="deletecontainer" class="col-span-6 px-4 py-3   sm:px-6">
+
+      <!--    FOR EACH ROW/IDEA WITHIN THE MODEL, INCLUDE THE PARTIAL AND CREATE A SEPARATE FORM-->
+      <% for (const row of model) { %>
+        <%- include('../partials/deleteIdea', {idea: row} ); %>
+      <% } %>
+    </div>
+
+
+      <!--  INCLUDE THE MUSICPLAYER EJS PARTIAL-->
+    <%- include('../partials/musicPlayer'); %>
+
+
+  <!--    BUTTON LINK TO OPEN THE ADD A NEW SONG IDEA FORM-->
+    <div class="col-span-6 px-4 py-3   sm:px-6">
+      <button type="submit" class="inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-md
+        font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2
+        focus:ring-offset-2 focus:ring-indigo-500" onclick="openForm('add')">
+        + New Song Idea
+      </button>
+    </div>
+
+
+  <!--  IF THE HOMEPAGE DATA INCLUDES A MESSAGE VARIABLE > 0 CHARACTERS DISPLAY THE MESSAGE IN A BANNER-->
+    <% if (message.length > 0) { %>
+    <div class="col-span-6 px-4 py-3   sm:px-6">
+      <div class="justify-center text-center px-4 py-3  border border-transparent shadow-sm text-md
+           font-medium rounded-md text-black bg-white"><%- message %></div>
+    </div>
+    <% } %>
+
+
+
+
+    <!-- ******** DISPLAY ALL IDEAS ***************-->
+
+    <div id="ideas" class="col-span-6 px-4 py-3   sm:px-6">
+
+      <!-- ******** CONTAINER AND LIST HEADERS  ***************-->
+
+      <div class="flex flex-col ">
+        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+              <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Name
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Idea Title
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Key
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Genre
+                    </th>
+                    <th scope="col" class="relative px-6 py-3">
+                      <span class="sr-only">View</span>
+                    </th>
+                    <th scope="col" class="relative px-6 py-3">
+                      <span class="sr-only">Edit</span>
+                    </th>
+                    <th scope="col" class="relative px-6 py-3">
+                      <span class="sr-only">Delete</span>
+                    </th>
+                  </tr>
+                </thead>
+
+                  <!--   ADD EACH IDEA IN THE DATABASE FROM THE allIdeas.ejs PARTIAL, PASSING EACH ROW IN A LOOP-->
+                <tbody class="bg-white divide-y divide-gray-200">
+                <% for (const row of model) { %>
+                  <%- include('../partials/allIdeas', {idea: row} ); %>
+                <% } %>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- END OF MAIN CONTAINER DIV-->
+  </div>
+
+
+  <!--  INCLUDE THE FOOTER EJS PARTIAL-->
+  <%- include('../partials/footer'); %>
+
+
+</body>
+</html>
