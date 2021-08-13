@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'../')));
 
 
-// **************** HOME PAGE CIRCLE SOUNDS PAGE RENDERING ****************
+// **************** HOME PAGE & CIRCLE SOUNDS PAGE RENDERING ****************
 
 // USING EJS TO RENDER HOMEPAGE
 app.get('/', function(req, res) {
